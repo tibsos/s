@@ -1,0 +1,201 @@
+{% load static %}
+{% load compress %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ссылочка | Регистрация</title>
+
+    <script src="{% static 'packages/jquery-3.6.1.min.js' %}"></script>
+
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="form-wrapper">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="form" id="form1">
+
+                    <div class="back-btn">
+    
+                        <button><-</button>
+    
+                    </div>
+    
+                    <div class="fields">
+    
+                        <div class="field">
+    
+                            <input type="text" name="email" id="email" placeholder="Электронная почта">
+    
+                        </div>
+    
+                        <div class="field">
+    
+                            <input type="text" name="username" id="username" placeholder="Название ссылочки">
+    
+                        </div>
+    
+                    </div>
+    
+                    <div class="register-btn">
+    
+                        <button id="registerBtn">Создать ссылочку</button>
+    
+                    </div>
+    
+                </div>
+    
+               <div class="form" id="form2">
+    
+                    <div class="field">
+    
+                        <input type="text" id="password" placeholder="Придумайте пароль">
+    
+                    </div>
+    
+               </div>
+    
+               <div class="form" id="form3">
+    
+                    <div class="field">
+    
+                        <input type="text" name="name" id="name" placeholder="Как вас зовут?">
+    
+                    </div>
+    
+               </div>
+    
+               <div class="form" id="form4">
+    
+                    <div class="category-field">
+    
+                        <div class="category" id="Бизнес"><h4>Инфлюэнсер</h4></div>
+                        <div class="category" id="Бизнес"><h4>Бизнес</h4></div>
+                        <div class="category" id="Бизнес"><h4>Цифровой создатель (блоггер)</h4></div>
+                        <div class="category" id="Бизнес"><h4>Мода</h4></div>
+                        <div class="category" id="Бизнес"><h4>Развлекательный</h4></div>
+                        <div class="category" id="Бизнес"><h4>Образование</h4></div>
+                        <div class="category" id="Бизнес"><h4>Еда</h4></div>
+                        <div class="category" id="Бизнес"><h4>Здоровье и фитнес</h4></div>
+                        <div class="category" id="Бизнес"><h4>Благотворение</h4></div>
+                        <div class="category" id="Бизнес"><h4>IT</h4></div>
+                        <div class="category" id="Бизнес"><h4>Путешествия</h4></div>
+                        <div class="category" id="Бизнес"><h4>Государство</h4></div>
+    
+                    </div>
+    
+               </div>
+    
+               <div class="form" id="form5">
+    
+                    <div class="plan-form-wrapper">
+    
+                        <p>Найди план для себя</p>
+    
+                        <div class="plans-wrapper">
+    
+                            <div class="plan">
+    
+                                <div class="top">
+    
+                                    <span class="text1">Бесплатный</span>
+                                    <span class="text2">Для твоей личной ссылочки</span>
+    
+                                    <div class="tick">
+    
+                                        <input type="checkbox">
+    
+                                    </div>
+    
+                                </div>
+    
+                                <div class="body">
+    
+                                    <div class="feature">
+    
+                                        <div class="tick">✓</div>
+    
+                                        <span>Сколько угодно ссылок</span>
+    
+                                    </div>
+    
+                                </div>
+    
+                                <div class="price">
+    
+                                    <span class="plan">Бесплатно</span>
+                                    <span class="plan-description">Бесплатно, навсегда</span>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="plan-btn"><button>Начать бесплатно</button></div>
+    
+                    </div>
+    
+                    <div class="thankyou-msg">
+    
+                        <h3>Спасибо за регистрацию!</h3>
+    
+                        <span>Чтобы подтвердить ваш аккаунт, нажмите на ссылку, отправленную вам на почту</span>
+    
+                        <button id="continueBtn" type='submit'>Продолжить</button>
+    
+                    </div>
+    
+               </div>
+    
+               <div class="no-account-wrapper">
+    
+                    <h4>У вас уже есть ссылочка? <a href="login/">Войти</a></h4>
+    
+               </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+
+    $('#continueBtn').click(function(){
+
+        $.ajax({
+
+            type: 'POST',
+
+            url: "{% url 'user:check-username' %}",
+
+            data: {
+
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+                'username': $('#username').val(),
+
+            },
+                
+        })
+
+    });
+
+</script>
+
+</html>
