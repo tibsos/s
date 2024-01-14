@@ -1,0 +1,20 @@
+/* line 5, static/scss/user/register.scss */
+.main .picture {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 650px;
+  background: #000000;
+  border-radius: 20px 0 0 20px; }
+
+/* line 20, static/scss/user/register.scss */
+.main .brand {
+  position: relative;
+  bottom: 20px;
+  left: 10px; }
+
+/* line 28, static/scss/user/register.scss */
+.main .text {
+  position: relative;
+  top: 100px; }

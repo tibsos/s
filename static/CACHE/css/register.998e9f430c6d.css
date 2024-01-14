@@ -1,0 +1,28 @@
+/* line 3, static/scss/user/register.scss */
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0; }
+
+/* line 17, static/scss/user/register.scss */
+.main .picture {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 450px;
+  background: #000000;
+  border-radius: 20px 0 0 20px; }
+
+/* line 32, static/scss/user/register.scss */
+.main .brand {
+  position: relative;
+  top: 20px;
+  left: 10px; }
+
+/* line 40, static/scss/user/register.scss */
+.main .text {
+  position: relative;
+  top: 100px; }

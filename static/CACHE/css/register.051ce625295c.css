@@ -1,0 +1,35 @@
+/* line 5, static/scss/user/register.scss */
+.main .picture {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 600px;
+  background: #000000;
+  border-radius: 20px 0 0 20px; }
+
+/* line 20, static/scss/user/register.scss */
+.main .brand {
+  position: relative;
+  left: 10px; }
+
+/* line 27, static/scss/user/register.scss */
+.main .text {
+  position: relative;
+  top: 100px;
+  left: 150px;
+  font-size: 30px; }
+
+/* line 37, static/scss/user/register.scss */
+.main #form2, .main #form3, .main #form4, .main #form5, .main .back-btn {
+  display: none; }
+
+/* line 43, static/scss/user/register.scss */
+.main .form {
+  position: relative;
+  top: 150px;
+  left: 200px; }
+  /* line 53, static/scss/user/register.scss */
+  .main .form .fields .field input {
+    width: 300px;
+    margin-bottom: 20px; }

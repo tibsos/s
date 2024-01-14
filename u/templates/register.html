@@ -15,10 +15,31 @@
 
     <script src="{% static 'packages/jquery-3.6.1.min.js' %}"></script>
 
+    {% compress css %}
+
+        <link rel="stylesheet" href="{% static 'scss/user/register.scss' %}" type="text/x-scss">
+
+    {% endcompress %}
+
 </head>
 <body>
 
     <div class="main">
+
+        <div class="picture"></div>
+
+        <div class="brand">
+
+            <div class="brand-text"><h1>Ссылочка</h1></div>
+            <div class="logo"></div>
+
+        </div>
+
+        <div class="text">
+
+            <h1>Создайте свою ссылочку!</h1>
+
+        </div>
 
         <div class="form-wrapper">
 
@@ -50,11 +71,7 @@
     
                     </div>
     
-                    <div class="register-btn">
-    
-                        <button id="registerBtn">Создать ссылочку</button>
-    
-                    </div>
+                    <button id="registerBtn">Создать ссылочку</button>
     
                 </div>
     
@@ -174,6 +191,23 @@
     </div>
 
 </body>
+
+<style>
+
+    @font-face {
+
+        font-family: Comfortaa;
+        src: url("{% static 'fonts/Comfortaa.ttf' %}");
+
+    }
+
+    body, button, input {
+
+        font-family: Comfortaa;
+
+    }
+
+</style>
 
 <script>
 
